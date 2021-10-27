@@ -1,35 +1,60 @@
-﻿using System;
+using System;
 
-namespace Indiv2Lab2
+namespace Indiv1Lab2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            double num;
-            check:
-            try 
+            double first, second;
+            Console.WriteLine("Программа вычисляет корень меньшего числа из двух введенных, а если числа равны, то выводит оба корня.");
+            check1:
+            try
             {
-                Console.WriteLine("Введите число от 1 до 100000");
-                num = double.Parse(Console.ReadLine());
-                while (num < 1 || num > 100000)
+                Console.WriteLine("Введите первое число");
+                first = double.Parse(Console.ReadLine());
+                while (first < 0)
                 {
-                    Console.WriteLine("Ошибка! Введите число от 1 до 100000");
-                    num = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Эта программа не вычисляет корень из отрицательного числа. Введите положительное число.");
+                    first = double.Parse(Console.ReadLine());
                 }
             }
             catch (FormatException)
             {
-                Console.WriteLine("Ошибка! Введите число");
-                goto check;
-            }           
-            Console.WriteLine("Все нечетные делители данного числа:");
-            for (int i = 1; i <= 50000; i+=2)
+                Console.WriteLine("Ошибка! Введите число.");
+                goto check1;
+            }
+            check2:
+            try
             {
-                if (num%i == 0)
+                Console.WriteLine("Введите второе число");
+                second = double.Parse(Console.ReadLine());
+                while (second < 0)
                 {
-                    Console.WriteLine(i);
-                } 
+                    Console.WriteLine("Эта программа не вычисляет корень из отрицательного числа. Введите положительное число.");
+                    second = double.Parse(Console.ReadLine());
+                }
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Ошибка! Введите число.");
+                goto check2;
+            }
+            if (first < 0 || second < 0)
+            {
+                Console.WriteLine("Error!");
+            }
+            else if (first < second)
+            {
+                Console.WriteLine($"Корень меньшего числа:{Math.Sqrt(first)}");
+            }
+            else if (second < first)
+            {
+                Console.WriteLine($"Корень меньшего числа:{Math.Sqrt(second)}");
+            }
+            else
+            {
+                Console.WriteLine($"Числа равны, их корни: {Math.Sqrt(first)} , {Math.Sqrt(second)}");
             }
         }
     }
