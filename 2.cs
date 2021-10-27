@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Zadanie2Lab2
 {
@@ -12,6 +12,10 @@ namespace Zadanie2Lab2
             try { 
             Console.WriteLine("Введите кол-во слагаемых");
             Count = int.Parse(Console.ReadLine());
+                while (Count <= 0)
+                {
+                    Console.WriteLine("Ошибка! Введите положительное число.");
+                }
             }catch (FormatException)
             {
                 Console.WriteLine("Ошибка! Введите число.");
