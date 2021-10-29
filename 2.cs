@@ -22,6 +22,11 @@ namespace Zadanie2Lab2
                 Console.WriteLine("Ошибка! Введите число.");
                 goto check;
             }
+             catch (OverflowException)
+            {
+                Console.WriteLine("Такое число нельзя обработать.");
+                goto check;
+            }
             double n = 3;
             double p = 1;
             for (i=0; i < Count; i++) 
