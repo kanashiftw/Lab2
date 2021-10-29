@@ -7,6 +7,7 @@ namespace Zadanie2Lab2
         static void Main(string[] args)
         {
             int i, Count;
+            int k = -1;
             Console.WriteLine("Вычисление числа Пи по заданной формуле:");
             check:
             try { 
@@ -25,8 +26,9 @@ namespace Zadanie2Lab2
             double p = 1;
             for (i=0; i < Count; i++) 
             {
-                p = p - (1 / n) +( 1 / (n + 2));
-                n = n + 4;
+                p = p + (1 / n)*k;
+                n = n + 2;
+                k = k * (-1);
             }
             Console.WriteLine($"Вычисленное нами примерное значение числа Пи = {p*4}");
         }
