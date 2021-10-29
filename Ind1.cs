@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Indiv1Lab2
 {
@@ -7,11 +7,17 @@ namespace Indiv1Lab2
         static void Main(string[] args)
         {
             double first, second;
+            Console.WriteLine("Программа вычисляет корень меньшего числа из двух введенных, а если числа равны, то выводит оба корня.");
             check1:
             try
             {
                 Console.WriteLine("Введите первое число");
                 first = double.Parse(Console.ReadLine());
+                while (first < 0)
+                {
+                    Console.WriteLine("Эта программа не вычисляет корень из отрицательного числа. Введите положительное число.");
+                    first = double.Parse(Console.ReadLine());
+                }
             }
             catch (FormatException)
             {
@@ -23,6 +29,11 @@ namespace Indiv1Lab2
             {
                 Console.WriteLine("Введите второе число");
                 second = double.Parse(Console.ReadLine());
+                while (second < 0)
+                {
+                    Console.WriteLine("Эта программа не вычисляет корень из отрицательного числа. Введите положительное число.");
+                    second = double.Parse(Console.ReadLine());
+                }
             }
             catch (FormatException)
             {
