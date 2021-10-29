@@ -15,7 +15,6 @@ namespace Zadanie3Lab2
                 f0 = f1;
                 f1 = f;
             }
-            Console.WriteLine($"Первым четырехзначным числом в ряде числел Фибоначчи является {f1}");
             Console.WriteLine("Теперь вычислим кол-во четырехзначных чисел в ряде Фибоначчи:");
             int count = 0;
             while (f1 < 10000)
