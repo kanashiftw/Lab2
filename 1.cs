@@ -84,7 +84,6 @@ namespace Zadanie1Lab2
                 {
                     First = (-b + Math.Sqrt(Discriminant)) / 2 * a;
                     Second = (-b - Math.Sqrt(Discriminant)) / 2 * a;
-                    Console.WriteLine($"Первый корень = {First}, Второй корень = {Second}");
                     if (First > 0)
                     {
                         Console.WriteLine($"Первый корень уравнения равен {First}");
