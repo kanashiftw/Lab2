@@ -76,7 +76,7 @@ namespace Zadanie1Lab2
             else
             {
                 double Discriminant = (b * b) - 4 * a * c;
-                if (Discriminant <= 0)
+                if (Discriminant < 0)
                 {            
                     Console.WriteLine($"Корни уравнения можно представить в виде комплексных чисел: ({-b} + i{Math.Sqrt( b*b - 4*a*c)})/{2*a} , ({-b} - i{Math.Sqrt(b*b - 4*a*c)})/{2 * a}");
                 }
